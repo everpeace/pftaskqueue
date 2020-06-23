@@ -4,7 +4,7 @@ export CGO_ENABLED=0
 
 # project metadta
 NAME         := pftaskqueue
-VERSION      ?= $(if $(RELEASE),$(shell git semv),$(shell git semv patch -p))
+VERSION      ?= $(if $(RELEASE),$(shell git semv now),$(shell git semv patch -p))
 REVISION     := $(shell git rev-parse --short HEAD)
 IMAGE_PREFIX ?= pftaskqueue/
 IMAGE_NAME   := $(if $(RELEASE),release,dev)
