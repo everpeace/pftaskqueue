@@ -1,7 +1,6 @@
 name: Release
 on:
   push:
-    branches: [ "master" ]
     tags:
       - "v[0-9]+.[0-9]+.[0-9]+"
 
@@ -35,7 +34,7 @@ jobs:
         run: make push-image
 
   goreleaser:
-    num: Release Binaries
+    name: Release Binaries
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/')
     env:
